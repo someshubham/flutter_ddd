@@ -7,4 +7,6 @@ import 'package:flutter_ddd/domain/core/failures.dart';
 abstract class ValueObject<T> extends Equatable {
   const ValueObject();
   Either<ValueFailure<T>, T> get value;
+
+  bool isValid() => value.isRight();
 }
